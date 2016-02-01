@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyViewController : UIViewController, UITableViewDataSource, UITableViewDelegate
+class MainViewController : UIViewController, UITableViewDataSource, UITableViewDelegate
 {
 
     var imageView : UIImageView?
@@ -23,8 +23,6 @@ class MyViewController : UIViewController, UITableViewDataSource, UITableViewDel
     {
         super.viewDidLoad()
 
-        self.edgesForExtendedLayout = .None
-
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         self.view.backgroundColor = UIColor.redColor()
@@ -33,37 +31,16 @@ class MyViewController : UIViewController, UITableViewDataSource, UITableViewDel
         tableView.dataSource = self
         tableView.delegate = self
 
-        let image = UIImage.init(named: "bus")
-        imageView = UIImageView.init(image: image)
-
-        imageView?.translatesAutoresizingMaskIntoConstraints = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImage(named: "bus")
+        imageView = UIImageView(image: image)
 
         self.view.addSubview(imageView!)
         self.view.addSubview(tableView)
-
-        let margins = view.layoutMarginsGuide
-
-        imageView?.topAnchor.constraintEqualToAnchor(margins.topAnchor, constant: 20).active = true
-
-        imageView?.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
-
-        imageView?.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
-
-        tableView.topAnchor.constraintEqualToAnchor(imageView!.bottomAnchor, constant: 10).active = true
-
-        tableView.bottomAnchor.constraintEqualToAnchor(margins.bottomAnchor).active = true
-
-        tableView.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
-
-        tableView.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
     }
 
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-
-        print("test2")
 
         RestApiManager.getTopApps
         {
@@ -72,8 +49,23 @@ class MyViewController : UIViewController, UITableViewDataSource, UITableViewDel
             self.allApps = apps
             self.tableView.reloadData()
 
-            self.view.setNeedsUpdateConstraints()
+            self.view.setNeedsLayout()
         }
+    }
+
+    override func viewWillLayoutSubviews()
+    {
+        super.viewWillLayoutSubviews()
+
+        guard let imgView = imageView, let img = imageView!.image else
+        {
+            return
+        }
+
+        imgView.frame = CGRectMake(10, 10, self.view.bounds.size.width - 20, img.size.height) ;
+
+        self.tableView.frame = CGRectMake(10, CGRectGetMaxY(imgView.frame), self.view.bounds.size.width - 20, self.view.bounds.size.height - CGRectGetMaxY(imgView.frame) - 10)
+        print("layout")
     }
 
     override func didReceiveMemoryWarning()

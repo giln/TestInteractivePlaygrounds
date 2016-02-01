@@ -1,0 +1,28 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "583793D1F972E05DFF7B957D00A04839877A1285",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "583793D1F972E05DFF7B957D00A04839877A1285" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EE2E2F7F-9553-42B6-B196-343AE4E27F94",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "583793D1F972E05DFF7B957D00A04839877A1285" : "..\/..\/Desktop\/TestInteractivePlaygrounds"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TestInteractivePlaygrounds",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TestInteractivePlaygrounds.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/giln\/TestInteractivePlaygrounds.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "583793D1F972E05DFF7B957D00A04839877A1285"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/giln\/TestInteractivePlaygrounds.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "583793D1F972E05DFF7B957D00A04839877A1285"
+    }
+  ]
+}

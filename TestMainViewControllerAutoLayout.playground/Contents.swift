@@ -4,15 +4,7 @@ import UIKit
 @testable import ModuleInteractive
 import XCPlayground
 
-extension UIImage
-{
-    convenience init(named: String)
-    {
-        self.init(named: named, inBundle: NSBundle(forClass : TestView.self), compatibleWithTraitCollection: nil)!
-    }
-}
-
-class MyViewController : UIViewController, UITableViewDataSource, UITableViewDelegate
+class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDelegate
 {
 
     var imageView : UIImageView?
@@ -29,6 +21,8 @@ class MyViewController : UIViewController, UITableViewDataSource, UITableViewDel
 
         print("viewDidLoad")
 
+        self.edgesForExtendedLayout = .None
+
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         self.view.backgroundColor = UIColor.redColor()
@@ -44,23 +38,23 @@ class MyViewController : UIViewController, UITableViewDataSource, UITableViewDel
         imageView?.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
-        // v.addSubview(imageView!)
-        // print(imageView)
         self.view.addSubview(imageView!)
 
-        imageView?.topAnchor.constraintEqualToAnchor(self.topLayoutGuide.bottomAnchor, constant: 10).active = true
+        let margins = view.layoutMarginsGuide
 
-        imageView?.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 10).active = true
+        imageView?.topAnchor.constraintEqualToAnchor(margins.topAnchor, constant: 15).active = true
 
-        imageView?.rightAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -10).active = true
+        imageView?.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
 
-        tableView.topAnchor.constraintEqualToAnchor(imageView!.bottomAnchor, constant: 10).active = true
+        imageView?.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
 
-        tableView.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: -10).active = true
+        tableView.topAnchor.constraintEqualToAnchor(imageView!.bottomAnchor, constant: 15).active = true
 
-        tableView.rightAnchor.constraintEqualToAnchor(self.view.rightAnchor, constant: -10).active = true
+        tableView.bottomAnchor.constraintEqualToAnchor(margins.bottomAnchor).active = true
 
-        tableView.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor, constant: 10).active = true
+        tableView.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
+
+        tableView.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
     }
 
     override func viewWillAppear(animated: Bool)
@@ -116,22 +110,14 @@ class MyViewController : UIViewController, UITableViewDataSource, UITableViewDel
     }
 }
 
-//var window: UIWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+//----------------------------------
 
 var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
 
-let nav = UINavigationController(rootViewController: MyViewController())
+let viewController = MyViewController1()
+let navController = UINavigationController(rootViewController: viewController)
 
-nav.navigationBar.tintColor = .whiteColor()
-nav.view.setNeedsDisplay()
-
-window.rootViewController = nav
+window.rootViewController = navController
 window.makeKeyAndVisible()
 
-//vc2.view.frame = CGRectMake(0, 0, 320, 480)
-
 XCPlaygroundPage.currentPage.liveView = window.rootViewController?.view
-
-//XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
-
-nav.navigationBar
