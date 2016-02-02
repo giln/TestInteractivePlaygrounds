@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:EmptyPlayground.playground">
+   </FileRef>
+   <FileRef
       location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestDetailViewControllerAutoLayout.playground">
    </FileRef>
    <FileRef
