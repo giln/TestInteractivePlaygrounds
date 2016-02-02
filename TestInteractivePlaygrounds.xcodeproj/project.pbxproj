@@ -12,6 +12,10 @@
 		A777FD1F1C5F6B8F00F780B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */; };
 		A777FD211C5F70D500F780B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */; };
 		A777FD231C5F9EA600F780B1 /* UIImage+Playgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FD221C5F9EA600F780B1 /* UIImage+Playgrounds.swift */; };
+		A78087821C60038F0089A859 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087811C60038F0089A859 /* RestApiManager.swift */; };
+		A78087831C6005CC0089A859 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087811C60038F0089A859 /* RestApiManager.swift */; };
+		A78087851C600ADE0089A859 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087841C600ADE0089A859 /* UIView+Autolayout.swift */; };
+		A78087861C600ADE0089A859 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087841C600ADE0089A859 /* UIView+Autolayout.swift */; };
 		A79FBADA1C5BD4CC002968E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */; };
 		A79FBADB1C5BD4CC002968E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */; };
 		A7A89C751C57B519004988BF /* ModuleInteractive.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A89C741C57B519004988BF /* ModuleInteractive.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,8 +23,6 @@
 		A7A89C7A1C57B519004988BF /* ModuleInteractive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7A89C721C57B519004988BF /* ModuleInteractive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7A89C7F1C57B56B004988BF /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F198CF1C57B374005A449F /* TestView.swift */; };
 		A7B55CA31C5A7CE600B1DEBB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B55CA21C5A7CE600B1DEBB /* App.swift */; };
-		A7B728501C5A721D0063252D /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7284F1C5A721D0063252D /* RestApiManager.swift */; };
-		A7B728511C5A721D0063252D /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7284F1C5A721D0063252D /* RestApiManager.swift */; };
 		A7DA91931C5F54E70035A585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DA91921C5F54E70035A585 /* Assets.xcassets */; };
 		A7DA91941C5F54E70035A585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DA91921C5F54E70035A585 /* Assets.xcassets */; };
 		A7F198A11C57B333005A449F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F198A01C57B333005A449F /* AppDelegate.swift */; };
@@ -72,12 +74,13 @@
 /* Begin PBXFileReference section */
 		A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A777FD221C5F9EA600F780B1 /* UIImage+Playgrounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Playgrounds.swift"; sourceTree = "<group>"; };
+		A78087811C60038F0089A859 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
+		A78087841C600ADE0089A859 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7A89C721C57B519004988BF /* ModuleInteractive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModuleInteractive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A89C741C57B519004988BF /* ModuleInteractive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleInteractive.h; sourceTree = "<group>"; };
 		A7A89C761C57B519004988BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B55CA21C5A7CE600B1DEBB /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		A7B7284F1C5A721D0063252D /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiManager.swift; path = ../RestApiManager.swift; sourceTree = "<group>"; };
 		A7DA91921C5F54E70035A585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7F1989D1C57B332005A449F /* TestInteractivePlaygrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestInteractivePlaygrounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F198A01C57B333005A449F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				A7A89C741C57B519004988BF /* ModuleInteractive.h */,
-				A7A89C761C57B519004988BF /* Info.plist */,
 				A777FD221C5F9EA600F780B1 /* UIImage+Playgrounds.swift */,
+				A7A89C761C57B519004988BF /* Info.plist */,
 			);
 			path = ModuleInteractive;
 			sourceTree = "<group>";
@@ -139,10 +142,10 @@
 		A7F198941C57B332005A449F = {
 			isa = PBXGroup;
 			children = (
+				A7A89C731C57B519004988BF /* ModuleInteractive */,
 				A7F1989F1C57B332005A449F /* TestInteractivePlaygrounds */,
 				A7F198B41C57B333005A449F /* TestInteractivePlaygroundsTests */,
 				A7F198BF1C57B333005A449F /* TestInteractivePlaygroundsUITests */,
-				A7A89C731C57B519004988BF /* ModuleInteractive */,
 				A7F1989E1C57B332005A449F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,16 +164,17 @@
 		A7F1989F1C57B332005A449F /* TestInteractivePlaygrounds */ = {
 			isa = PBXGroup;
 			children = (
-				A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */,
+				A7B55CA21C5A7CE600B1DEBB /* App.swift */,
 				A7F198A01C57B333005A449F /* AppDelegate.swift */,
+				A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */,
+				A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */,
 				A7F198A21C57B333005A449F /* MyViewController.swift */,
+				A78087811C60038F0089A859 /* RestApiManager.swift */,
+				A7F198CF1C57B374005A449F /* TestView.swift */,
+				A78087841C600ADE0089A859 /* UIView+Autolayout.swift */,
+				A7DA91921C5F54E70035A585 /* Assets.xcassets */,
 				A7F198A91C57B333005A449F /* LaunchScreen.storyboard */,
 				A7F198AC1C57B333005A449F /* Info.plist */,
-				A7F198CF1C57B374005A449F /* TestView.swift */,
-				A7B7284F1C5A721D0063252D /* RestApiManager.swift */,
-				A7B55CA21C5A7CE600B1DEBB /* App.swift */,
-				A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */,
-				A7DA91921C5F54E70035A585 /* Assets.xcassets */,
 			);
 			path = TestInteractivePlaygrounds;
 			sourceTree = "<group>";
@@ -367,11 +371,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7473EE51C5A7D8500D86947 /* App.swift in Sources */,
-				A7B728511C5A721D0063252D /* RestApiManager.swift in Sources */,
 				A777FD231C5F9EA600F780B1 /* UIImage+Playgrounds.swift in Sources */,
 				A79FBADB1C5BD4CC002968E4 /* DetailViewController.swift in Sources */,
 				A777FD211C5F70D500F780B1 /* MainViewController.swift in Sources */,
 				A725EF631C5BC66400B16B54 /* MyViewController.swift in Sources */,
+				A78087861C600ADE0089A859 /* UIView+Autolayout.swift in Sources */,
+				A78087831C6005CC0089A859 /* RestApiManager.swift in Sources */,
 				A7A89C7F1C57B56B004988BF /* TestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,9 +388,10 @@
 				A777FD1F1C5F6B8F00F780B1 /* MainViewController.swift in Sources */,
 				A7F198D01C57B374005A449F /* TestView.swift in Sources */,
 				A7F198A31C57B333005A449F /* MyViewController.swift in Sources */,
-				A7B728501C5A721D0063252D /* RestApiManager.swift in Sources */,
 				A79FBADA1C5BD4CC002968E4 /* DetailViewController.swift in Sources */,
 				A7B55CA31C5A7CE600B1DEBB /* App.swift in Sources */,
+				A78087851C600ADE0089A859 /* UIView+Autolayout.swift in Sources */,
+				A78087821C60038F0089A859 /* RestApiManager.swift in Sources */,
 				A7F198A11C57B333005A449F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

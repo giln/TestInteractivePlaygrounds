@@ -6,28 +6,21 @@ import XCPlayground
 
 class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-
+    let kMargin : CGFloat = 15.0
     var imageView : UIImageView?
-
     var tableView = UITableView(frame: CGRectZero)
-
     var allApps : [App] = []
-
-    let v = TestView()
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        print("viewDidLoad")
-
+        // Start below navigationbar
         self.edgesForExtendedLayout = .None
 
+        // Register cell
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
-        self.view.backgroundColor = UIColor.redColor()
-
-        self.view.addSubview(tableView)
         tableView.backgroundColor = UIColor.whiteColor()
         tableView.dataSource = self
         tableView.delegate = self
@@ -35,33 +28,28 @@ class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDe
         let image = UIImage.init(named: "bus")
         imageView = UIImageView.init(image: image)
 
+        // Add subviews
+        self.view.addSubview(imageView!)
+        self.view.addSubview(tableView)
+
+        // Autolayout
         imageView?.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
-        self.view.addSubview(imageView!)
+        let margins = self.view.layoutMarginsGuide
 
-        let margins = view.layoutMarginsGuide
-
-        imageView?.topAnchor.constraintEqualToAnchor(margins.topAnchor, constant: 15).active = true
-
+        imageView?.topAnchor.constraintEqualToAnchor(margins.topAnchor, constant: kMargin).active = true
         imageView?.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
-
         imageView?.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
-
-        tableView.topAnchor.constraintEqualToAnchor(imageView!.bottomAnchor, constant: 15).active = true
-
+        tableView.topAnchor.constraintEqualToAnchor(imageView!.bottomAnchor, constant: kMargin).active = true
         tableView.bottomAnchor.constraintEqualToAnchor(margins.bottomAnchor).active = true
-
         tableView.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
-
         tableView.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
     }
 
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-
-        print("test2")
 
         RestApiManager.getTopApps
         {
@@ -100,8 +88,6 @@ class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let app = allApps[indexPath.row]
-
-        print(app)
 
         let detailVc = DetailViewController()
         detailVc.app = app

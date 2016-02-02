@@ -5,8 +5,9 @@ import UIKit
 @testable import ModuleInteractive
 import XCPlayground
 
-class DetailViewController1 : UIViewController
+class DetailViewControllerManualLayout : UIViewController
 {
+    let kMargin : CGFloat = 10.0
 
     var app : App?
     {
@@ -15,7 +16,6 @@ class DetailViewController1 : UIViewController
             self.title = app?.name
             descriptionLabel.text = app?.appDescription
             self.view.setNeedsLayout()
-            self.view.setNeedsDisplay()
         }
     }
 
@@ -26,11 +26,6 @@ class DetailViewController1 : UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)
 
         self.view.backgroundColor = UIColor.redColor()
         self.view.addSubview(scrollView)
@@ -41,6 +36,11 @@ class DetailViewController1 : UIViewController
 
         descriptionLabel.backgroundColor = UIColor.whiteColor()
         descriptionLabel.numberOfLines = 0
+    }
+
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning()
@@ -54,11 +54,11 @@ class DetailViewController1 : UIViewController
 
         self.scrollView.frame = self.view.bounds
 
-        let fitSize = descriptionLabel.sizeThatFits(CGSizeMake(self.view.bounds.size.width - 20, CGFloat(MAXFLOAT)))
+        let fitSize = descriptionLabel.sizeThatFits(CGSizeMake(self.view.bounds.size.width - kMargin * 2, CGFloat(MAXFLOAT)))
 
-        contentView.frame = CGRectMake(0, 0, fitSize.width + 20, fitSize.height + 20)
+        contentView.frame = CGRectMake(0, 0, fitSize.width + kMargin * 2, fitSize.height + kMargin * 2)
 
-        descriptionLabel.frame = CGRectMake(10, 10, fitSize.width, fitSize.height)
+        descriptionLabel.frame = CGRectMake(kMargin, kMargin, fitSize.width, fitSize.height)
 
         self.scrollView.contentSize = contentView.bounds.size
     }
@@ -68,7 +68,7 @@ class DetailViewController1 : UIViewController
 
 var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
 
-let detailViewController = DetailViewController1()
+let detailViewController = DetailViewControllerManualLayout()
 
 window.rootViewController = detailViewController
 window.makeKeyAndVisible()

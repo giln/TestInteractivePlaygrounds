@@ -2,10 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerManualLayout.playground">
+      location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestDetailViewControllerAutoLayout.playground">
    </FileRef>
    <FileRef
-      location = "group:/Users/gn/Desktop/TestInteractivePlaygrounds/TestDetailViewControllerManualLayout.playground">
+      location = "group:TestDetailViewControllerManualLayout.playground">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerManualLayout.playground">
    </FileRef>
    <FileRef
       location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerAutoLayout.playground">

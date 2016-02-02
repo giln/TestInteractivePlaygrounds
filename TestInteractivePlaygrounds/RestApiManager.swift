@@ -17,8 +17,6 @@ class RestApiManager: NSObject
 
     class func getTopApps(onCompletion: [App] -> Void)
     {
-        print("start getTopApps")
-
         let baseURL = "http://itunes.apple.com/fr/rss/toppaidapplications/limit=50/json"
 
         makeHTTPGetRequest(baseURL, onCompletion:
@@ -32,8 +30,6 @@ class RestApiManager: NSObject
             }
 
             let json = try! NSJSONSerialization.JSONObjectWithData(data1, options: .AllowFragments)
-
-            // print(result)
 
             guard let feed = json["feed"] as? Payload, let apps = feed["entry"] as? [AnyObject] else
             {
@@ -79,7 +75,6 @@ class RestApiManager: NSObject
         {
             data, response, error -> Void in
 
-            print("received")
             dispatch_async(dispatch_get_main_queue(),
             {
                 onCompletion(data, error)

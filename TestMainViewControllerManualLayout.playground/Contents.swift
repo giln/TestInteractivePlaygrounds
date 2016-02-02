@@ -5,45 +5,34 @@ import UIKit
 @testable import ModuleInteractive
 import XCPlayground
 
-class MainViewController1 : UIViewController, UITableViewDataSource, UITableViewDelegate
+class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-
+    let kMargin : CGFloat = 10.0
     var imageView : UIImageView?
-
     var tableView = UITableView(frame: CGRectZero)
-
     var allApps : [App] = []
-
-    let v = TestView()
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
-    {
-        print("init")
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    required init?(coder aDecoder: NSCoder)
-    {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
+        // Start under navigation bar
         self.edgesForExtendedLayout = .None
-        
+
+        // Register TableView Cell
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
+        // Background colors
         self.view.backgroundColor = UIColor.redColor()
-
         tableView.backgroundColor = UIColor.whiteColor()
+
         tableView.dataSource = self
         tableView.delegate = self
 
         let image = UIImage(named: "bus")
         imageView = UIImageView(image: image)
 
+        // Add Subviews
         self.view.addSubview(imageView!)
         self.view.addSubview(tableView)
     }
@@ -67,14 +56,15 @@ class MainViewController1 : UIViewController, UITableViewDataSource, UITableView
     {
         super.viewWillLayoutSubviews()
 
-        guard let imgView = imageView else
+        guard let imgView = imageView, let img = imgView.image else
         {
             return
         }
 
-        imgView.frame = CGRectMake(10, 10, self.view.bounds.size.width - 20, (imgView.image?.size.height)!)
+        // All layout happens here
+        imgView.frame = CGRectMake(kMargin, kMargin, self.view.bounds.size.width - kMargin * 2, img.size.height)
 
-        self.tableView.frame = CGRectMake(10, CGRectGetMaxY(imgView.frame), self.view.bounds.size.width - 20, self.view.bounds.size.height - CGRectGetMaxY(imgView.frame) - 10)
+        self.tableView.frame = CGRectMake(kMargin, CGRectGetMaxY(imgView.frame), self.view.bounds.size.width - kMargin * 2, self.view.bounds.size.height - CGRectGetMaxY(imgView.frame) - kMargin)
     }
 
     override func didReceiveMemoryWarning()
@@ -104,8 +94,6 @@ class MainViewController1 : UIViewController, UITableViewDataSource, UITableView
     {
         let app = allApps[indexPath.row]
 
-        print(app)
-
         let detailVc = DetailViewController()
         detailVc.app = app
 
@@ -117,7 +105,7 @@ class MainViewController1 : UIViewController, UITableViewDataSource, UITableView
 
 var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
 
-let viewController = MainViewController1()
+let viewController = MainViewControllerManualLayout()
 let navController = UINavigationController(rootViewController: UIViewController())
 
 navController.pushViewController(viewController, animated: false)
