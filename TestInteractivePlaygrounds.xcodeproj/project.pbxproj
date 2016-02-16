@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71A35731C62638C007D4F38 /* HeaderInsetTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = A71A35711C62638C007D4F38 /* HeaderInsetTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A71A35741C62638C007D4F38 /* HeaderInsetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A35721C62638C007D4F38 /* HeaderInsetTableView.m */; };
+		A71A35751C62638C007D4F38 /* HeaderInsetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A35721C62638C007D4F38 /* HeaderInsetTableView.m */; };
+		A71A35791C626887007D4F38 /* FloatingSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A35781C626887007D4F38 /* FloatingSectionsViewController.swift */; };
+		A71A357A1C626887007D4F38 /* FloatingSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A35781C626887007D4F38 /* FloatingSectionsViewController.swift */; };
 		A725EF631C5BC66400B16B54 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F198A21C57B333005A449F /* MyViewController.swift */; };
 		A7473EE51C5A7D8500D86947 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B55CA21C5A7CE600B1DEBB /* App.swift */; };
 		A777FD1F1C5F6B8F00F780B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */; };
@@ -16,6 +21,8 @@
 		A78087831C6005CC0089A859 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087811C60038F0089A859 /* RestApiManager.swift */; };
 		A78087851C600ADE0089A859 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087841C600ADE0089A859 /* UIView+Autolayout.swift */; };
 		A78087861C600ADE0089A859 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087841C600ADE0089A859 /* UIView+Autolayout.swift */; };
+		A7926AE61C730AF40016EF00 /* FloatingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7926AE51C730AF40016EF00 /* FloatingTableView.swift */; };
+		A7926AE71C730AF40016EF00 /* FloatingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7926AE51C730AF40016EF00 /* FloatingTableView.swift */; };
 		A79FBADA1C5BD4CC002968E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */; };
 		A79FBADB1C5BD4CC002968E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */; };
 		A7A89C751C57B519004988BF /* ModuleInteractive.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A89C741C57B519004988BF /* ModuleInteractive.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,10 +79,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A71A35701C62638C007D4F38 /* TestInteractivePlaygrounds-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestInteractivePlaygrounds-Bridging-Header.h"; sourceTree = "<group>"; };
+		A71A35711C62638C007D4F38 /* HeaderInsetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderInsetTableView.h; sourceTree = "<group>"; };
+		A71A35721C62638C007D4F38 /* HeaderInsetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderInsetTableView.m; sourceTree = "<group>"; };
+		A71A35781C626887007D4F38 /* FloatingSectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingSectionsViewController.swift; sourceTree = "<group>"; };
 		A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A777FD221C5F9EA600F780B1 /* UIImage+Playgrounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Playgrounds.swift"; sourceTree = "<group>"; };
 		A78087811C60038F0089A859 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		A78087841C600ADE0089A859 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		A7926AE51C730AF40016EF00 /* FloatingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingTableView.swift; sourceTree = "<group>"; };
 		A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7A89C721C57B519004988BF /* ModuleInteractive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModuleInteractive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A89C741C57B519004988BF /* ModuleInteractive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleInteractive.h; sourceTree = "<group>"; };
@@ -167,6 +179,7 @@
 				A7B55CA21C5A7CE600B1DEBB /* App.swift */,
 				A7F198A01C57B333005A449F /* AppDelegate.swift */,
 				A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */,
+				A71A35781C626887007D4F38 /* FloatingSectionsViewController.swift */,
 				A777FD1E1C5F6B8F00F780B1 /* MainViewController.swift */,
 				A7F198A21C57B333005A449F /* MyViewController.swift */,
 				A78087811C60038F0089A859 /* RestApiManager.swift */,
@@ -175,6 +188,10 @@
 				A7DA91921C5F54E70035A585 /* Assets.xcassets */,
 				A7F198A91C57B333005A449F /* LaunchScreen.storyboard */,
 				A7F198AC1C57B333005A449F /* Info.plist */,
+				A71A35711C62638C007D4F38 /* HeaderInsetTableView.h */,
+				A71A35721C62638C007D4F38 /* HeaderInsetTableView.m */,
+				A71A35701C62638C007D4F38 /* TestInteractivePlaygrounds-Bridging-Header.h */,
+				A7926AE51C730AF40016EF00 /* FloatingTableView.swift */,
 			);
 			path = TestInteractivePlaygrounds;
 			sourceTree = "<group>";
@@ -205,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A89C751C57B519004988BF /* ModuleInteractive.h in Headers */,
+				A71A35731C62638C007D4F38 /* HeaderInsetTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,11 +390,14 @@
 			files = (
 				A7473EE51C5A7D8500D86947 /* App.swift in Sources */,
 				A777FD231C5F9EA600F780B1 /* UIImage+Playgrounds.swift in Sources */,
+				A71A35751C62638C007D4F38 /* HeaderInsetTableView.m in Sources */,
 				A79FBADB1C5BD4CC002968E4 /* DetailViewController.swift in Sources */,
 				A777FD211C5F70D500F780B1 /* MainViewController.swift in Sources */,
 				A725EF631C5BC66400B16B54 /* MyViewController.swift in Sources */,
+				A71A357A1C626887007D4F38 /* FloatingSectionsViewController.swift in Sources */,
 				A78087861C600ADE0089A859 /* UIView+Autolayout.swift in Sources */,
 				A78087831C6005CC0089A859 /* RestApiManager.swift in Sources */,
+				A7926AE71C730AF40016EF00 /* FloatingTableView.swift in Sources */,
 				A7A89C7F1C57B56B004988BF /* TestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,11 +408,14 @@
 			files = (
 				A777FD1F1C5F6B8F00F780B1 /* MainViewController.swift in Sources */,
 				A7F198D01C57B374005A449F /* TestView.swift in Sources */,
+				A71A35741C62638C007D4F38 /* HeaderInsetTableView.m in Sources */,
 				A7F198A31C57B333005A449F /* MyViewController.swift in Sources */,
 				A79FBADA1C5BD4CC002968E4 /* DetailViewController.swift in Sources */,
 				A7B55CA31C5A7CE600B1DEBB /* App.swift in Sources */,
+				A71A35791C626887007D4F38 /* FloatingSectionsViewController.swift in Sources */,
 				A78087851C600ADE0089A859 /* UIView+Autolayout.swift in Sources */,
 				A78087821C60038F0089A859 /* RestApiManager.swift in Sources */,
+				A7926AE61C730AF40016EF00 /* FloatingTableView.swift in Sources */,
 				A7F198A11C57B333005A449F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +471,7 @@
 		A7A89C7B1C57B519004988BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -458,6 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.ModuleInteractive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -466,6 +492,7 @@
 		A7A89C7C1C57B519004988BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -569,11 +596,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TestInteractivePlaygrounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygrounds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestInteractivePlaygrounds/TestInteractivePlaygrounds-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -581,11 +611,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TestInteractivePlaygrounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygrounds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestInteractivePlaygrounds/TestInteractivePlaygrounds-Bridging-Header.h";
 			};
 			name = Release;
 		};

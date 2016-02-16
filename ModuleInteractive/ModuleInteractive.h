@@ -16,4 +16,5 @@ FOUNDATION_EXPORT const unsigned char ModuleInteractiveVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ModuleInteractive/PublicHeader.h>
 
+#import <ModuleInteractive/HeaderInsetTableView.h>
 

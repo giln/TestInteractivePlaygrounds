@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
 
-        let navController = UINavigationController(rootViewController: MyViewController())
+        let navController = UINavigationController(rootViewController: FloatingSectionsViewController())
         window!.rootViewController = navController
         window!.makeKeyAndVisible()
 

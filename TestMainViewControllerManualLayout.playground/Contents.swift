@@ -33,8 +33,9 @@ class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, 
         imageView = UIImageView(image: image)
 
         // Add Subviews
-        self.view.addSubview(imageView!)
+        // self.view.addSubview(imageView!)
         self.view.addSubview(tableView)
+        self.tableView.tableHeaderView = imageView!
     }
 
     override func viewWillAppear(animated: Bool)

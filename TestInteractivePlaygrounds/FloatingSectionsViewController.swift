@@ -1,56 +1,18 @@
-// : Playground - noun: a place where people can play
+//
+//  FloatingSectionsViewController.swift
+//  TestInteractivePlaygrounds
+//
+//  Created by Gil Nakache on 03/02/2016.
+//  Copyright © 2016 Viseo. All rights reserved.
+//
 
+import Foundation
 import UIKit
-import XCPlayground
-
-class FloatingTableView : UITableView
-{
-    var stickyHeaderView : UIView?
-    {
-        didSet
-        {
-            // the content is inset with the view height
-            self.contentInset = UIEdgeInsetsMake(stickyHeaderView!.bounds.size.height, 0, 0, 0)
-            self.addSubview(stickyHeaderView!)
-
-        }
-    }
-    
-    override func layoutSubviews()
-    {
-        super.layoutSubviews()
-        
-        if let stickyView = self.stickyHeaderView
-        {
-            // We need to bring the sticky view above the section views but below scroll indicator view
-            if let sectionView = self.headerViewForSection(0)
-            {
-                self.insertSubview(stickyView, aboveSubview: sectionView)
-            }
-            
-            var headerOffset = CGFloat(0)
-            
-            if var tableHeaderViewFrame = self.tableHeaderView?.frame
-            {
-                // Change frame of tableHeaderView
-                headerOffset = tableHeaderViewFrame.maxY
-                
-                tableHeaderViewFrame.origin.y -= stickyView.bounds.size.height
-                self.tableHeaderView?.frame = tableHeaderViewFrame
-            }
-            
-            // Set frame of sticky view
-            stickyView.frame = CGRectMake(0,max(headerOffset-stickyView.bounds.size.height,contentOffset.y),self.bounds.size.width,stickyView.bounds.size.height)
-            
-        }
-    }
-}
-
 class FloatingSectionsViewController : UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     let tableView = FloatingTableView()
     
-    let data = [["1", "2", "3", "4", "5","6","7"], ["1", "2", "3", "4", "5", "6", "7"], ["1", "2", "3", "4", "5", "6", "7"]]
+    let data = [["1", "2", "3", "4", "5", "6", "7"], ["1", "2", "3", "4", "5", "6", "7"], ["1", "2", "3", "4", "5", "6", "7"]]
     let sections = ["A", "B", "C"]
     
     let stickyView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
@@ -73,7 +35,6 @@ class FloatingSectionsViewController : UIViewController, UITableViewDataSource, 
         
         tableView.tableHeaderView = redView
         tableView.stickyHeaderView = stickyView
-        
         
         // Background colors
         self.view.backgroundColor = UIColor.redColor()
@@ -105,7 +66,7 @@ class FloatingSectionsViewController : UIViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = data[indexPath.section][indexPath.row]
+        cell.textLabel?.text = data[indexPath.section] [indexPath.row]
         
         return cell
     }
@@ -113,10 +74,9 @@ class FloatingSectionsViewController : UIViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         let headerCell = tableView.dequeueReusableHeaderFooterViewWithIdentifier("headerCell")!
-            
-            headerCell.textLabel?.text = sections[section]
-            headerCell.contentView.backgroundColor = UIColor.darkGrayColor()
         
+        headerCell.textLabel?.text = sections[section]
+        headerCell.contentView.backgroundColor = UIColor.darkGrayColor()
         
         return headerCell
     }
@@ -125,16 +85,4 @@ class FloatingSectionsViewController : UIViewController, UITableViewDataSource, 
     {
         return 40.0
     }
-    
-   
-    
 }
-
-var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
-
-let detailViewController = FloatingSectionsViewController()
-
-window.rootViewController = detailViewController
-window.makeKeyAndVisible()
-
-XCPlaygroundPage.currentPage.liveView = window.rootViewController?.view
