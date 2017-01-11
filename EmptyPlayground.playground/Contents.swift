@@ -1,7 +1,8 @@
 // : Playground - noun: a place where people can play
 
 import UIKit
-import XCPlayground
+import PlaygroundSupport
+
 
 class FloatingTableView : UITableView
 {
@@ -23,7 +24,7 @@ class FloatingTableView : UITableView
         if let stickyView = self.stickyHeaderView
         {
             // We need to bring the sticky view above the section views but below scroll indicator view
-            if let sectionView = self.headerViewForSection(0)
+            if let sectionView = self.headerView(forSection: 0)
             {
                 self.insertSubview(stickyView, aboveSubview: sectionView)
             }
@@ -40,7 +41,7 @@ class FloatingTableView : UITableView
             }
             
             // Set frame of sticky view
-            stickyView.frame = CGRectMake(0,max(headerOffset-stickyView.bounds.size.height,contentOffset.y),self.bounds.size.width,stickyView.bounds.size.height)
+            stickyView.frame = CGRect(x: 0,y: max(headerOffset-stickyView.bounds.size.height,contentOffset.y),width: self.bounds.size.width,height: stickyView.bounds.size.height)
             
         }
     }
@@ -59,25 +60,25 @@ class FloatingSectionsViewController : UIViewController, UITableViewDataSource, 
     {
         super.viewDidLoad()
         
-        self.edgesForExtendedLayout = .None
+        self.edgesForExtendedLayout = UIRectEdge()
         
         // Register TableView Cell
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        self.tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "headerCell")
+        self.tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "headerCell")
         
         let redView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
-        redView.backgroundColor = UIColor.redColor()
+        redView.backgroundColor = UIColor.red
         
-        stickyView.backgroundColor = UIColor.yellowColor()
+        stickyView.backgroundColor = UIColor.yellow
         
         tableView.tableHeaderView = redView
         tableView.stickyHeaderView = stickyView
         
         
         // Background colors
-        self.view.backgroundColor = UIColor.redColor()
-        tableView.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.red
+        tableView.backgroundColor = UIColor.white
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -92,36 +93,36 @@ class FloatingSectionsViewController : UIViewController, UITableViewDataSource, 
         tableView.frame = self.view.bounds
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return data.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return data[section].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = data[indexPath.section][indexPath.row]
         
         return cell
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let headerCell = tableView.dequeueReusableHeaderFooterViewWithIdentifier("headerCell")!
+        let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerCell")!
             
             headerCell.textLabel?.text = sections[section]
-            headerCell.contentView.backgroundColor = UIColor.darkGrayColor()
+            headerCell.contentView.backgroundColor = UIColor.darkGray
         
         
         return headerCell
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
         return 40.0
     }
@@ -130,11 +131,11 @@ class FloatingSectionsViewController : UIViewController, UITableViewDataSource, 
     
 }
 
-var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
+var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
 
 let detailViewController = FloatingSectionsViewController()
 
 window.rootViewController = detailViewController
 window.makeKeyAndVisible()
 
-XCPlaygroundPage.currentPage.liveView = window.rootViewController?.view
+PlaygroundPage.current.liveView = window.rootViewController?.view

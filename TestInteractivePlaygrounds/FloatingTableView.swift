@@ -27,7 +27,7 @@ class FloatingTableView : UITableView
         if let stickyView = self.stickyHeaderView
         {
             // We need to bring the sticky view above the section views but below scroll indicator view
-            if let sectionView = self.headerViewForSection(0)
+            if let sectionView = self.headerView(forSection: 0)
             {
                 self.insertSubview(stickyView, aboveSubview: sectionView)
             }
@@ -44,7 +44,7 @@ class FloatingTableView : UITableView
             }
             
             // Set frame of sticky view
-            stickyView.frame = CGRectMake(0, max(headerOffset - stickyView.bounds.size.height, contentOffset.y), self.bounds.size.width, stickyView.bounds.size.height)
+            stickyView.frame = CGRect(x: 0, y: max(headerOffset - stickyView.bounds.size.height, contentOffset.y), width: self.bounds.size.width, height: stickyView.bounds.size.height)
         }
     }
 }

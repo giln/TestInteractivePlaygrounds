@@ -13,6 +13,6 @@ extension UIImage
 {
     convenience init(named: String)
     {
-        self.init(named: named, inBundle: NSBundle(forClass :  MainViewController.self), compatibleWithTraitCollection: nil)!
+        self.init(named: named, in: Bundle(for :  MainViewController.self), compatibleWith: nil)!
     }
 }

@@ -2,13 +2,13 @@
 
 import UIKit
 @testable import ModuleInteractive
-import XCPlayground
+import PlaygroundSupport
 
 class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     let kMargin : CGFloat = 15.0
     var imageView : UIImageView?
-    var tableView = UITableView(frame: CGRectZero)
+    var tableView = UITableView(frame: CGRect.zero)
     var allApps : [App] = []
 
     override func viewDidLoad()
@@ -16,12 +16,12 @@ class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
 
         // Start below navigationbar
-        self.edgesForExtendedLayout = .None
+        self.edgesForExtendedLayout = UIRectEdge()
 
         // Register cell
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
-        tableView.backgroundColor = UIColor.whiteColor()
+        tableView.backgroundColor = UIColor.white
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -38,16 +38,16 @@ class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDe
 
         let margins = self.view.layoutMarginsGuide
 
-        imageView?.topAnchor.constraintEqualToAnchor(margins.topAnchor, constant: kMargin).active = true
-        imageView?.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
-        imageView?.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
-        tableView.topAnchor.constraintEqualToAnchor(imageView!.bottomAnchor, constant: kMargin).active = true
-        tableView.bottomAnchor.constraintEqualToAnchor(margins.bottomAnchor).active = true
-        tableView.rightAnchor.constraintEqualToAnchor(margins.rightAnchor).active = true
-        tableView.leftAnchor.constraintEqualToAnchor(margins.leftAnchor).active = true
+        imageView?.topAnchor.constraint(equalTo: margins.topAnchor, constant: kMargin).isActive = true
+        imageView?.leftAnchor.constraint(equalTo: margins.leftAnchor).isActive = true
+        imageView?.rightAnchor.constraint(equalTo: margins.rightAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: imageView!.bottomAnchor, constant: kMargin).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: margins.rightAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: margins.leftAnchor).isActive = true
     }
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
 
@@ -67,25 +67,25 @@ class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDe
         super.didReceiveMemoryWarning()
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return allApps.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = allApps[indexPath.row].name
 
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let app = allApps[indexPath.row]
 
@@ -98,7 +98,7 @@ class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDe
 
 //----------------------------------
 
-var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
+var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 350, height: 540))
 
 let viewController = MyViewController1()
 let navController = UINavigationController(rootViewController: viewController)
@@ -106,4 +106,4 @@ let navController = UINavigationController(rootViewController: viewController)
 window.rootViewController = navController
 window.makeKeyAndVisible()
 
-XCPlaygroundPage.currentPage.liveView = window.rootViewController?.view
+PlaygroundPage.current.liveView = viewController.view

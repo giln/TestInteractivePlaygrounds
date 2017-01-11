@@ -2,7 +2,9 @@
 
 import UIKit
 @testable import ModuleInteractive
-import XCPlayground
+import PlaygroundSupport
+
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 class DetailViewControllerAutoLayout : UIViewController
 {
@@ -16,7 +18,7 @@ class DetailViewControllerAutoLayout : UIViewController
             descriptionLabel.text = app?.appDescription
             self.view.setNeedsUpdateConstraints()
 
-            scrollView.contentSize = CGSizeMake(descriptionLabel.bounds.size.width + kMargin * 2, descriptionLabel.bounds.size.height + kMargin * 2)
+            scrollView.contentSize = CGSize(width:descriptionLabel.bounds.size.width + kMargin * 2, height: descriptionLabel.bounds.size.height + kMargin * 2)
         }
     }
 
@@ -27,14 +29,14 @@ class DetailViewControllerAutoLayout : UIViewController
     {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor.blue
 
         self.view.addSubview(scrollView)
         scrollView.addSubview(descriptionLabel)
 
         // Colors
-        scrollView.backgroundColor = UIColor.yellowColor()
-        descriptionLabel.backgroundColor = UIColor.whiteColor()
+        scrollView.backgroundColor = UIColor.yellow
+        descriptionLabel.backgroundColor = UIColor.white
 
         descriptionLabel.numberOfLines = 0
 
@@ -45,11 +47,11 @@ class DetailViewControllerAutoLayout : UIViewController
         // Auto Layout
         scrollView.anchorInSuperview()
 
-        descriptionLabel.topAnchor.constraintEqualToAnchor(scrollView.topAnchor, constant: kMargin).active = true
-        descriptionLabel.leadingAnchor.constraintEqualToAnchor(scrollView.leadingAnchor, constant: kMargin).active = true
+        descriptionLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: kMargin).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: kMargin).isActive = true
     }
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
     }
@@ -70,17 +72,21 @@ class DetailViewControllerAutoLayout : UIViewController
 
 // ----------------------------------------------
 
-var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
-
 let detailViewController = DetailViewControllerAutoLayout()
 
-window.rootViewController = detailViewController
-window.makeKeyAndVisible()
-
-XCPlaygroundPage.currentPage.liveView = window.rootViewController?.view
+ print("titi")
 
 RestApiManager.getTopApps
-{ (apps) in
-
-    detailViewController.app = apps[1]
+    { (apps) in
+        
+        print("toto")
+        
+        detailViewController.app = apps[1]
 }
+
+print("tata")
+
+
+
+PlaygroundPage.current.liveView = detailViewController
+

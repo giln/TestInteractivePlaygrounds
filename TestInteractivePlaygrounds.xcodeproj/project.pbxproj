@@ -23,6 +23,10 @@
 		A78087861C600ADE0089A859 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78087841C600ADE0089A859 /* UIView+Autolayout.swift */; };
 		A7926AE61C730AF40016EF00 /* FloatingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7926AE51C730AF40016EF00 /* FloatingTableView.swift */; };
 		A7926AE71C730AF40016EF00 /* FloatingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7926AE51C730AF40016EF00 /* FloatingTableView.swift */; };
+		A7926AE91C730CE10016EF00 /* AppStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7926AE81C730CE10016EF00 /* AppStore.storyboard */; };
+		A7926AEA1C730CE10016EF00 /* AppStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7926AE81C730CE10016EF00 /* AppStore.storyboard */; };
+		A7926AEC1C7310860016EF00 /* AppStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7926AEB1C7310860016EF00 /* AppStoreViewController.swift */; };
+		A7926AED1C7310860016EF00 /* AppStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7926AEB1C7310860016EF00 /* AppStoreViewController.swift */; };
 		A79FBADA1C5BD4CC002968E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */; };
 		A79FBADB1C5BD4CC002968E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */; };
 		A7A89C751C57B519004988BF /* ModuleInteractive.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A89C741C57B519004988BF /* ModuleInteractive.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +92,8 @@
 		A78087811C60038F0089A859 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		A78087841C600ADE0089A859 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		A7926AE51C730AF40016EF00 /* FloatingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingTableView.swift; sourceTree = "<group>"; };
+		A7926AE81C730CE10016EF00 /* AppStore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppStore.storyboard; sourceTree = "<group>"; };
+		A7926AEB1C7310860016EF00 /* AppStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreViewController.swift; sourceTree = "<group>"; };
 		A79FBAD91C5BD4CC002968E4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7A89C721C57B519004988BF /* ModuleInteractive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModuleInteractive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A89C741C57B519004988BF /* ModuleInteractive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleInteractive.h; sourceTree = "<group>"; };
@@ -192,6 +198,8 @@
 				A71A35721C62638C007D4F38 /* HeaderInsetTableView.m */,
 				A71A35701C62638C007D4F38 /* TestInteractivePlaygrounds-Bridging-Header.h */,
 				A7926AE51C730AF40016EF00 /* FloatingTableView.swift */,
+				A7926AE81C730CE10016EF00 /* AppStore.storyboard */,
+				A7926AEB1C7310860016EF00 /* AppStoreViewController.swift */,
 			);
 			path = TestInteractivePlaygrounds;
 			sourceTree = "<group>";
@@ -309,21 +317,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Viseo;
 				TargetAttributes = {
 					A7A89C711C57B519004988BF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 					};
 					A7F1989C1C57B332005A449F = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2TZ5BPY867;
+						LastSwiftMigration = 0820;
 					};
 					A7F198B01C57B333005A449F = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = A7F1989C1C57B332005A449F;
 					};
 					A7F198BB1C57B333005A449F = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = A7F1989C1C57B332005A449F;
 					};
 				};
@@ -354,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7926AEA1C730CE10016EF00 /* AppStore.storyboard in Resources */,
 				A7DA91941C5F54E70035A585 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +378,7 @@
 			files = (
 				A7DA91931C5F54E70035A585 /* Assets.xcassets in Resources */,
 				A7F198AB1C57B333005A449F /* LaunchScreen.storyboard in Resources */,
+				A7926AE91C730CE10016EF00 /* AppStore.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +407,7 @@
 				A777FD231C5F9EA600F780B1 /* UIImage+Playgrounds.swift in Sources */,
 				A71A35751C62638C007D4F38 /* HeaderInsetTableView.m in Sources */,
 				A79FBADB1C5BD4CC002968E4 /* DetailViewController.swift in Sources */,
+				A7926AED1C7310860016EF00 /* AppStoreViewController.swift in Sources */,
 				A777FD211C5F70D500F780B1 /* MainViewController.swift in Sources */,
 				A725EF631C5BC66400B16B54 /* MyViewController.swift in Sources */,
 				A71A357A1C626887007D4F38 /* FloatingSectionsViewController.swift in Sources */,
@@ -410,6 +426,7 @@
 				A7F198D01C57B374005A449F /* TestView.swift in Sources */,
 				A71A35741C62638C007D4F38 /* HeaderInsetTableView.m in Sources */,
 				A7F198A31C57B333005A449F /* MyViewController.swift in Sources */,
+				A7926AEC1C7310860016EF00 /* AppStoreViewController.swift in Sources */,
 				A79FBADA1C5BD4CC002968E4 /* DetailViewController.swift in Sources */,
 				A7B55CA31C5A7CE600B1DEBB /* App.swift in Sources */,
 				A71A35791C626887007D4F38 /* FloatingSectionsViewController.swift in Sources */,
@@ -472,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -493,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -522,8 +541,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -550,6 +571,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -567,8 +589,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -587,6 +611,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -595,9 +621,10 @@
 		A7F198C61C57B333005A449F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = 2TZ5BPY867;
 				INFOPLIST_FILE = TestInteractivePlaygrounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygrounds;
@@ -610,9 +637,10 @@
 		A7F198C71C57B333005A449F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = 2TZ5BPY867;
 				INFOPLIST_FILE = TestInteractivePlaygrounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygrounds;
@@ -629,6 +657,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygroundsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestInteractivePlaygrounds.app/TestInteractivePlaygrounds";
 			};
 			name = Debug;
@@ -641,6 +670,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygroundsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestInteractivePlaygrounds.app/TestInteractivePlaygrounds";
 			};
 			name = Release;
@@ -652,6 +682,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygroundsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TestInteractivePlaygrounds;
 			};
 			name = Debug;
@@ -663,6 +694,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gn.TestInteractivePlaygroundsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TestInteractivePlaygrounds;
 			};
 			name = Release;

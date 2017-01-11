@@ -3,13 +3,14 @@
 import UIKit
 
 @testable import ModuleInteractive
-import XCPlayground
+import PlaygroundSupport
+
 
 class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     let kMargin : CGFloat = 10.0
     var imageView : UIImageView?
-    var tableView = UITableView(frame: CGRectZero)
+    var tableView = UITableView(frame: CGRect.zero)
     var allApps : [App] = []
 
     override func viewDidLoad()
@@ -17,14 +18,14 @@ class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, 
         super.viewDidLoad()
 
         // Start under navigation bar
-        self.edgesForExtendedLayout = .None
+        self.edgesForExtendedLayout = UIRectEdge()
 
         // Register TableView Cell
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         // Background colors
-        self.view.backgroundColor = UIColor.redColor()
-        tableView.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.blue
+        tableView.backgroundColor = UIColor.white
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -38,7 +39,7 @@ class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, 
         self.tableView.tableHeaderView = imageView!
     }
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
 
@@ -63,9 +64,9 @@ class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, 
         }
 
         // All layout happens here
-        imgView.frame = CGRectMake(kMargin, kMargin, self.view.bounds.size.width - kMargin * 2, img.size.height)
+        imgView.frame = CGRect(x: kMargin, y: kMargin, width: self.view.bounds.size.width - kMargin * 2, height: img.size.height)
 
-        self.tableView.frame = CGRectMake(kMargin, CGRectGetMaxY(imgView.frame), self.view.bounds.size.width - kMargin * 2, self.view.bounds.size.height - CGRectGetMaxY(imgView.frame) - kMargin)
+        self.tableView.frame = CGRect(x: kMargin, y: imgView.frame.maxY, width: self.view.bounds.size.width - kMargin * 2, height: self.view.bounds.size.height - imgView.frame.maxY - kMargin)
     }
 
     override func didReceiveMemoryWarning()
@@ -73,25 +74,25 @@ class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, 
         super.didReceiveMemoryWarning()
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return allApps.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = allApps[indexPath.row].name
 
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let app = allApps[indexPath.row]
 
@@ -104,7 +105,7 @@ class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, 
 
 // ----------------------------------------------
 
-var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
+var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
 
 let viewController = MainViewControllerManualLayout()
 let navController = UINavigationController(rootViewController: UIViewController())
@@ -113,4 +114,4 @@ navController.pushViewController(viewController, animated: false)
 window.rootViewController = navController
 window.makeKeyAndVisible()
 
-XCPlaygroundPage.currentPage.liveView = window.rootViewController?.view
+PlaygroundPage.current.liveView = window.rootViewController?.view

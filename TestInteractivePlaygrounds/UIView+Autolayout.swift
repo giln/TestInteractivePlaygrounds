@@ -20,9 +20,9 @@ extension UIView
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        self.centerXAnchor.constraintEqualToAnchor(sview.centerXAnchor).active = true
-        self.centerYAnchor.constraintEqualToAnchor(sview.centerYAnchor).active = true
-        self.widthAnchor.constraintEqualToAnchor(sview.widthAnchor).active = true
-        self.heightAnchor.constraintEqualToAnchor(sview.heightAnchor).active = true
+        self.centerXAnchor.constraint(equalTo: sview.centerXAnchor).isActive = true
+        self.centerYAnchor.constraint(equalTo: sview.centerYAnchor).isActive = true
+        self.widthAnchor.constraint(equalTo: sview.widthAnchor).isActive = true
+        self.heightAnchor.constraint(equalTo: sview.heightAnchor).isActive = true
     }
 }

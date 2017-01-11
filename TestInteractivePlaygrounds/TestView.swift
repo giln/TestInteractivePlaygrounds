@@ -17,16 +17,16 @@ class TestView: UIView
     override init(frame: CGRect)
     {
         subView = UIView()
-        subView.backgroundColor = UIColor.yellowColor()
+        subView.backgroundColor = UIColor.yellow
         aSwitch = UISwitch()
 
         super.init(frame: frame)
-        self.backgroundColor = UIColor.redColor()
+        self.backgroundColor = UIColor.red
 
         self.addSubview(subView)
         self.addSubview(aSwitch)
 
-        aSwitch.addTarget(self, action: "flip", forControlEvents: UIControlEvents.ValueChanged)
+        aSwitch.addTarget(self, action: #selector(TestView.flip), for: UIControlEvents.valueChanged)
     }
 
     required init(coder aDecoder: NSCoder)
@@ -42,19 +42,19 @@ class TestView: UIView
         aSwitch.center = self.center
     }
 
-    override func drawRect(rect: CGRect)
+    override func draw(_ rect: CGRect)
     {
 
-        super.drawRect(rect)
+        super.draw(rect)
     }
 
     func flip()
     {
         print("flip")
 
-        UIView.animateWithDuration(1.0)
-        {
+        UIView.animate(withDuration: 1.0, animations: {
             // self.frame = CGRectMake(0,0,500,500)
-        }
+        })
+        
     }
 }

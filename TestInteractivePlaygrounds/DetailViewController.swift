@@ -23,7 +23,7 @@ class DetailViewController : UIViewController
         }
     }
 
-    let contentView = UIView(frame: CGRectZero)
+    let contentView = UIView(frame: CGRect.zero)
     let descriptionLabel = UILabel()
     let scrollView = UIScrollView()
 
@@ -32,18 +32,18 @@ class DetailViewController : UIViewController
         super.viewDidLoad()
     }
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
 
-        self.view.backgroundColor = UIColor.redColor()
+        self.view.backgroundColor = UIColor.red
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
 
-        contentView.backgroundColor = UIColor.redColor()
+        contentView.backgroundColor = UIColor.red
         contentView.addSubview(descriptionLabel)
 
-        descriptionLabel.backgroundColor = UIColor.whiteColor()
+        descriptionLabel.backgroundColor = UIColor.white
         descriptionLabel.numberOfLines = 0
     }
 
@@ -58,11 +58,11 @@ class DetailViewController : UIViewController
 
         self.scrollView.frame = self.view.bounds
 
-        let fitSize = descriptionLabel.sizeThatFits(CGSizeMake(self.view.bounds.size.width - 20, CGFloat(MAXFLOAT)))
+        let fitSize = descriptionLabel.sizeThatFits(CGSize(width: self.view.bounds.size.width - 20, height: CGFloat(MAXFLOAT)))
 
-        contentView.frame = CGRectMake(0, 0, fitSize.width + 20, fitSize.height + 20)
+        contentView.frame = CGRect(x: 0, y: 0, width: fitSize.width + 20, height: fitSize.height + 20)
 
-        descriptionLabel.frame = CGRectMake(10, 10, fitSize.width, fitSize.height)
+        descriptionLabel.frame = CGRect(x: 10, y: 10, width: fitSize.width, height: fitSize.height)
 
         self.scrollView.contentSize = contentView.bounds.size
     }

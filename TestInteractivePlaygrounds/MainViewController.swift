@@ -13,7 +13,7 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
 
     var imageView : UIImageView?
 
-    var tableView = UITableView(frame: CGRectZero)
+    var tableView = UITableView(frame: CGRect.zero)
 
     var allApps : [App] = []
 
@@ -23,11 +23,11 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
     {
         super.viewDidLoad()
 
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
-        self.view.backgroundColor = UIColor.redColor()
+        self.view.backgroundColor = UIColor.red
 
-        tableView.backgroundColor = UIColor.whiteColor()
+        tableView.backgroundColor = UIColor.white
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -38,7 +38,7 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
         self.view.addSubview(tableView)
     }
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
 
@@ -62,9 +62,9 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
             return
         }
 
-        imgView.frame = CGRectMake(10, 10, self.view.bounds.size.width - 20, img.size.height) ;
+        imgView.frame = CGRect(x: 10, y: 10, width: self.view.bounds.size.width - 20, height: img.size.height) ;
 
-        self.tableView.frame = CGRectMake(10, CGRectGetMaxY(imgView.frame), self.view.bounds.size.width - 20, self.view.bounds.size.height - CGRectGetMaxY(imgView.frame) - 10)
+        self.tableView.frame = CGRect(x: 10, y: imgView.frame.maxY, width: self.view.bounds.size.width - 20, height: self.view.bounds.size.height - imgView.frame.maxY - 10)
         print("layout")
     }
 
@@ -73,25 +73,25 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return allApps.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = allApps[indexPath.row].name
 
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let app = allApps[indexPath.row]
 

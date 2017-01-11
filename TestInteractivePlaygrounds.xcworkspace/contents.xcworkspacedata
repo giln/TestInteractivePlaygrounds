@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:EmptyPlayground.playground">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestDetailViewControllerAutoLayout.playground">
-   </FileRef>
-   <FileRef
-      location = "group:TestDetailViewControllerManualLayout.playground">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerManualLayout.playground">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerAutoLayout.playground">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Playgrounds">
+      <FileRef
+         location = "group:EmptyPlayground.playground">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestDetailViewControllerAutoLayout.playground">
+      </FileRef>
+      <FileRef
+         location = "group:TestDetailViewControllerManualLayout.playground">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerManualLayout.playground">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerAutoLayout.playground">
+      </FileRef>
+   </Group>
    <FileRef
       location = "container:TestInteractivePlaygrounds.xcodeproj">
    </FileRef>

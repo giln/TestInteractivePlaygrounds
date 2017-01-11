@@ -3,7 +3,8 @@
 import UIKit
 
 @testable import ModuleInteractive
-import XCPlayground
+import PlaygroundSupport
+
 
 class DetailViewControllerManualLayout : UIViewController
 {
@@ -19,7 +20,7 @@ class DetailViewControllerManualLayout : UIViewController
         }
     }
 
-    let contentView = UIView(frame: CGRectZero)
+    let contentView = UIView(frame: CGRect.zero)
     let descriptionLabel = UILabel()
     let scrollView = UIScrollView()
 
@@ -27,18 +28,18 @@ class DetailViewControllerManualLayout : UIViewController
     {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.redColor()
+        self.view.backgroundColor = UIColor.red
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
 
-        contentView.backgroundColor = UIColor.redColor()
+        contentView.backgroundColor = UIColor.red
         contentView.addSubview(descriptionLabel)
 
-        descriptionLabel.backgroundColor = UIColor.whiteColor()
+        descriptionLabel.backgroundColor = UIColor.white
         descriptionLabel.numberOfLines = 0
     }
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
     }
@@ -54,11 +55,11 @@ class DetailViewControllerManualLayout : UIViewController
 
         self.scrollView.frame = self.view.bounds
 
-        let fitSize = descriptionLabel.sizeThatFits(CGSizeMake(self.view.bounds.size.width - kMargin * 2, CGFloat(MAXFLOAT)))
+        let fitSize = descriptionLabel.sizeThatFits(CGSize(width: self.view.bounds.size.width - kMargin * 2, height: CGFloat(MAXFLOAT)))
 
-        contentView.frame = CGRectMake(0, 0, fitSize.width + kMargin * 2, fitSize.height + kMargin * 2)
+        contentView.frame = CGRect(x: 0, y: 0, width: fitSize.width + kMargin * 2, height: fitSize.height + kMargin * 2)
 
-        descriptionLabel.frame = CGRectMake(kMargin, kMargin, fitSize.width, fitSize.height)
+        descriptionLabel.frame = CGRect(x: kMargin, y: kMargin, width: fitSize.width, height: fitSize.height)
 
         self.scrollView.contentSize = contentView.bounds.size
     }
@@ -66,14 +67,14 @@ class DetailViewControllerManualLayout : UIViewController
 
 // ----------------------------------------------
 
-var window: UIWindow = UIWindow(frame: CGRectMake(0, 0, 320, 480))
+var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
 
 let detailViewController = DetailViewControllerManualLayout()
 
 window.rootViewController = detailViewController
 window.makeKeyAndVisible()
 
-XCPlaygroundPage.currentPage.liveView = window.rootViewController?.view
+PlaygroundPage.current.liveView = window.rootViewController?.view
 
 RestApiManager.getTopApps
 { (apps) in
