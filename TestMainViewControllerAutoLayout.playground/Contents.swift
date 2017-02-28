@@ -98,7 +98,7 @@ class MyViewController1 : UIViewController, UITableViewDataSource, UITableViewDe
 
 //----------------------------------
 
-var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 350, height: 540))
+var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 700, height: 540))
 
 let viewController = MyViewController1()
 let navController = UINavigationController(rootViewController: viewController)

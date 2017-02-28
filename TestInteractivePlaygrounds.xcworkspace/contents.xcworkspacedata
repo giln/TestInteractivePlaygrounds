@@ -19,6 +19,9 @@
       <FileRef
          location = "group:/Users/gn/Dev/Perso/TestInteractivePlaygrounds/TestMainViewControllerAutoLayout.playground">
       </FileRef>
+      <FileRef
+         location = "group:ViewController.playground">
+      </FileRef>
    </Group>
    <FileRef
       location = "container:TestInteractivePlaygrounds.xcodeproj">

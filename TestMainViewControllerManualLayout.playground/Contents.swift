@@ -105,7 +105,7 @@ class MainViewControllerManualLayout : UIViewController, UITableViewDataSource, 
 
 // ----------------------------------------------
 
-var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+var window: UIWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: 640, height: 480))
 
 let viewController = MainViewControllerManualLayout()
 let navController = UINavigationController(rootViewController: UIViewController())

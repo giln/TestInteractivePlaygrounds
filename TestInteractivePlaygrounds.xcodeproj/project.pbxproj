@@ -36,6 +36,7 @@
 		A7B55CA31C5A7CE600B1DEBB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B55CA21C5A7CE600B1DEBB /* App.swift */; };
 		A7DA91931C5F54E70035A585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DA91921C5F54E70035A585 /* Assets.xcassets */; };
 		A7DA91941C5F54E70035A585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DA91921C5F54E70035A585 /* Assets.xcassets */; };
+		A7F00E361E2CDE8F0078BBD0 /* PlaygroundSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F00E351E2CDE8F0078BBD0 /* PlaygroundSupport.swift */; };
 		A7F198A11C57B333005A449F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F198A01C57B333005A449F /* AppDelegate.swift */; };
 		A7F198A31C57B333005A449F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F198A21C57B333005A449F /* MyViewController.swift */; };
 		A7F198AB1C57B333005A449F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F198A91C57B333005A449F /* LaunchScreen.storyboard */; };
@@ -100,6 +101,7 @@
 		A7A89C761C57B519004988BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B55CA21C5A7CE600B1DEBB /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		A7DA91921C5F54E70035A585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7F00E351E2CDE8F0078BBD0 /* PlaygroundSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundSupport.swift; sourceTree = "<group>"; };
 		A7F1989D1C57B332005A449F /* TestInteractivePlaygrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestInteractivePlaygrounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F198A01C57B333005A449F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F198A21C57B333005A449F /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				A7A89C741C57B519004988BF /* ModuleInteractive.h */,
 				A777FD221C5F9EA600F780B1 /* UIImage+Playgrounds.swift */,
 				A7A89C761C57B519004988BF /* Info.plist */,
+				A7F00E351E2CDE8F0078BBD0 /* PlaygroundSupport.swift */,
 			);
 			path = ModuleInteractive;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				A78087831C6005CC0089A859 /* RestApiManager.swift in Sources */,
 				A7926AE71C730AF40016EF00 /* FloatingTableView.swift in Sources */,
 				A7A89C7F1C57B56B004988BF /* TestView.swift in Sources */,
+				A7F00E361E2CDE8F0078BBD0 /* PlaygroundSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,7 +57,7 @@ class RestApiManager: NSObject
                     continue
                 }
                 
-                let appstoreApp = App(name: name, link: link, description: appDescription)
+                let appstoreApp = App(name: name, link: link, appDescription: appDescription)
                 
                 allApps.append(appstoreApp)
             }

@@ -13,11 +13,4 @@ struct App
     let name: String
     let link: String
     let appDescription : String
-
-    init(name: String, link: String, description: String)
-    {
-        self.name = name
-        self.link = link
-        self.appDescription = description
-    }
 }
